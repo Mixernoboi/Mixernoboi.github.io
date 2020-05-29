@@ -7,24 +7,25 @@
         <meta name="description" content="hmm?">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://mixerno.space/o2.css" />
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
         <script src="https://mixerno.space/odometer.js"></script>
         <script type="text/javascript" src="https://mixerno.space/jquery-3.1.1.min.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="js/javascript.js"></script>
+        <script src="../js/javascript.js"></script>
+        <script>
+            getdataTwitch()
+            Twitch()
+        </script>
     </head>
     <body id="body" style="background-color: rgb(208, 228, 254);">
         This site is not affiliated with <a href="https://livecounts.net">Livecounts.net</a>! 
-        <input id="subscribeButton" onclick="goyt()" type="submit" value="Subscribe!" style="opacity: 1.007; display: block;">
-        <a id="channelName" onclick="searcher()" style="color: rgb(0, 0, 0); border: 3px none green;">Channel name</a>
+        <input id="subscribeButton" onclick="goTwitch()" type="submit" value="Follow!" style="opacity: 1.007; display: block;">
+        <a id="channelName" onclick="searcherTwitch()" style="color: rgb(0, 0, 0); border: 3px none green;">User name</a>
         <div class="odometer odometer-auto-theme" id="channelSubs" style="color: rgb(0, 0, 0);">0</div>
         <div class="footer">
-           <p id="left1"><a href="twitter/">Twitter (NEW)</a></p>
-           <p id="left1"><a href="https://livecounts.mixerno.space/twitch">Twitch (NEW)</a></p>
-          </div>
-          <script>
-              getdata()
-              yt()
-          </script>
+            
+           <p id="left1"><a href="https://livecounts.mixerno.space">Youtube</a></p>
+           <p id="left1"><a href="https://livecounts.mixerno.space/twitter">Twitter</a></p>
+          </div>    
     </body>
 </html>
