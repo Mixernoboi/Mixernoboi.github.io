@@ -141,24 +141,24 @@ function getdataTwitch() { //Hi there code watcher. Whatcha doin here? :3
           channelName.innerHTML = json.name //Hi there code watcher. Whatcha doin here? :3
         } //Hi there code watcher. Whatcha doin here? :3
       }) //Hi there code watcher. Whatcha doin here? :3
-} 
+}  //Hi there code watcher. Whatcha doin here? :3
 function getdataDiffrenceTwit() { //Hi there code watcher. Whatcha doin here? :3
-  chanelid = params[1]
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
   chanelid2 = params[2] //Hi there code watcher. Whatcha doin here? :3
   if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
     chanelid = "BarackObama"; //Hi there code watcher. Whatcha doin here? :3
   } else { //Hi there code watcher. Whatcha doin here? :3
     chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
-  }
+  } //Hi there code watcher. Whatcha doin here? :3
   if(chanelid2 == null || chanelid2 == "") { //Hi there code watcher. Whatcha doin here? :3
     chanelid2 = "realDonaldtrump"; //Hi there code watcher. Whatcha doin here? :3
   } else { //Hi there code watcher. Whatcha doin here? :3
     chanelid2 = params[2] //Hi there code watcher. Whatcha doin here? :3
-  }
-  var nam;
-  var nam2;
-  var folcount;
-  var folcount2;
+  } //Hi there code watcher. Whatcha doin here? :3
+  var nam; //Hi there code watcher. Whatcha doin here? :3
+  var nam2; //Hi there code watcher. Whatcha doin here? :3
+  var folcount; //Hi there code watcher. Whatcha doin here? :3
+  var folcount2; //Hi there code watcher. Whatcha doin here? :3
   $.ajax({ //Hi there code watcher. Whatcha doin here? :3
     url: `${key}https://api.mixerno.space/twitter2/user/${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
     // Handle as Text //Hi there code watcher. Whatcha doin here? :3
@@ -168,42 +168,42 @@ function getdataDiffrenceTwit() { //Hi there code watcher. Whatcha doin here? :3
        //Hi there code watcher. Whatcha doin here? :3
       nam = json.name //Hi there code watcher. Whatcha doin here? :3
       $.ajax({ //Hi there code watcher. Whatcha doin here? :3
-        url: `https://bastet.socialblade.com/twitter/lookup?query=${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
+        url: `${key}https://api.mixerno.space/twitter2/user/${chanelid2}`, //Hi there code watcher. Whatcha doin here? :3
         // Handle as Text //Hi there code watcher. Whatcha doin here? :3
         dataType: "text", //Hi there code watcher. Whatcha doin here? :3
         success: function (data) { //Hi there code watcher. Whatcha doin here? :3
           var json = $.parseJSON(data); //Hi there code watcher. Whatcha doin here? :3
            //Hi there code watcher. Whatcha doin here? :3
-           folcount = json //Hi there code watcher. Whatcha doin here? :3
-           $.ajax({ //Hi there code watcher. Whatcha doin here? :3
-            url: `${key}https://api.mixerno.space/twitter2/user/${chanelid2}`, //Hi there code watcher. Whatcha doin here? :3
-            // Handle as Text //Hi there code watcher. Whatcha doin here? :3
-            dataType: "text", //Hi there code watcher. Whatcha doin here? :3
-            success: function (data) { //Hi there code watcher. Whatcha doin here? :3
-              var json = $.parseJSON(data); //Hi there code watcher. Whatcha doin here? :3
-               //Hi there code watcher. Whatcha doin here? :3
-              nam2 = json.name //Hi there code watcher. Whatcha doin here? :3
-              $.ajax({ //Hi there code watcher. Whatcha doin here? :3
-                url: `https://bastet.socialblade.com/twitter/lookup?query=${chanelid2}`, //Hi there code watcher. Whatcha doin here? :3
-                // Handle as Text //Hi there code watcher. Whatcha doin here? :3
-                dataType: "text", //Hi there code watcher. Whatcha doin here? :3
-                success: function (data) { //Hi there code watcher. Whatcha doin here? :3
-                  var json = $.parseJSON(data); //Hi there code watcher. Whatcha doin here? :3
-                   //Hi there code watcher. Whatcha doin here? :3
-                   folcount2 = json //Hi there code watcher. Whatcha doin here? :3
-                   channelSubs.innerHTML = folcount - folcount2
-                   channelName.innerHTML = `${nam} vs ${nam2}`
-                   
-                } //Hi there code watcher. Whatcha doin here? :3
-              })
-            } //Hi there code watcher. Whatcha doin here? :3
-          })
+          nam2 = json.name //Hi there code watcher. Whatcha doin here? :3
+          channelName.innerHTML = `${nam} vs ${nam2}` //Hi there code watcher. Whatcha doin here? :3
         } //Hi there code watcher. Whatcha doin here? :3
-      })
+      }) //Hi there code watcher. Whatcha doin here? :3
     } //Hi there code watcher. Whatcha doin here? :3
   })  //Hi there code watcher. Whatcha doin here? :3
-   
-  
+  $.ajax({ //Hi there code watcher. Whatcha doin here? :3
+    url: `https://bastet.socialblade.com/twitter/lookup?query=${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
+    // Handle as Text //Hi there code watcher. Whatcha doin here? :3
+    dataType: "text", //Hi there code watcher. Whatcha doin here? :3
+    success: function (data) { //Hi there code watcher. Whatcha doin here? :3
+      var json = $.parseJSON(data); //Hi there code watcher. Whatcha doin here? :3
+       //Hi there code watcher. Whatcha doin here? :3
+       folcount = json //Hi there code watcher. Whatcha doin here? :3
+       $.ajax({ //Hi there code watcher. Whatcha doin here? :3
+        url: `https://bastet.socialblade.com/twitter/lookup?query=${chanelid2}`, //Hi there code watcher. Whatcha doin here? :3
+        // Handle as Text //Hi there code watcher. Whatcha doin here? :3
+        dataType: "text", //Hi there code watcher. Whatcha doin here? :3
+        success: function (data) { //Hi there code watcher. Whatcha doin here? :3
+          var json = $.parseJSON(data); //Hi there code watcher. Whatcha doin here? :3
+           //Hi there code watcher. Whatcha doin here? :3
+           folcount2 = json //Hi there code watcher. Whatcha doin here? :3
+           channelSubs.innerHTML = folcount - folcount2    //Hi there code watcher. Whatcha doin here? :3
+        } //Hi there code watcher. Whatcha doin here? :3
+      })  //Hi there code watcher. Whatcha doin here? :3
+    } //Hi there code watcher. Whatcha doin here? :3
+  }) //Hi there code watcher. Whatcha doin here? :3
+  //Hi there code watcher. Whatcha doin here? :3
+    //Hi there code watcher. Whatcha doin here? :3
+   //Hi there code watcher. Whatcha doin here? :3
    //Hi there code watcher. Whatcha doin here? :3
   //Hi there code watcher. Whatcha doin here? :3
 }//Hi there code watcher. Whatcha doin here? :3
