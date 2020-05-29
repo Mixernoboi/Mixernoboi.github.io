@@ -39,31 +39,31 @@ function searcherTwit() { //Hi there code watcher. Whatcha doin here? :3
   } //Hi there code watcher. Whatcha doin here? :3
 } //Hi there code watcher. Whatcha doin here? :3
 function goyt() { //Hi there code watcher. Whatcha doin here? :3
-  chanelid = params[1]
-  if(chanelid == null || chanelid == "") {
-    chanelid = "UC-lHJZR3Gqxm24_Vd_AJ5Yw";
-  } else {
-    chanelid = params[1]
-  }
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
     location.href = "https://youtube.com/channel/" + chanelid //Hi there code watcher. Whatcha doin here? :3
 } //Hi there code watcher. Whatcha doin here? :3
 function goTwit() { //Hi there code watcher. Whatcha doin here? :3
-  chanelid = params[1]
-  if(chanelid == null || chanelid == "") {
-    chanelid = "BarackObama";
-  } else {
-    chanelid = params[1]
-  }
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = "BarackObama"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
     location.href = "https://twitter.com/" + chanelid //Hi there code watcher. Whatcha doin here? :3
 } //Hi there code watcher. Whatcha doin here? :3
 //Hi there code watcher. Whatcha doin here? :3
 function getdata() { //Hi there code watcher. Whatcha doin here? :3
-  chanelid = params[1]
-  if(chanelid == null || chanelid == "") {
-    chanelid = "UC-lHJZR3Gqxm24_Vd_AJ5Yw";
-  } else {
-    chanelid = params[1]
-  }
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
     $.ajax({ //Hi there code watcher. Whatcha doin here? :3
         url: `${key}https://api.mixerno.space/youtube/channelUC/${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
         // Handle as Text //Hi there code watcher. Whatcha doin here? :3
@@ -76,12 +76,12 @@ function getdata() { //Hi there code watcher. Whatcha doin here? :3
       }) //Hi there code watcher. Whatcha doin here? :3
 } //Hi there code watcher. Whatcha doin here? :3
 function getdataTwitter() { //Hi there code watcher. Whatcha doin here? :3
-  chanelid = params[1]
-  if(chanelid == null || chanelid == "") {
-    chanelid = "BarackObama";
-  } else {
-    chanelid = params[1]
-  }
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = "BarackObama"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
     $.ajax({ //Hi there code watcher. Whatcha doin here? :3
         url: `${key}https://api.mixerno.space/twitter/user/${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
         // Handle as Text //Hi there code watcher. Whatcha doin here? :3
@@ -93,11 +93,11 @@ function getdataTwitter() { //Hi there code watcher. Whatcha doin here? :3
         } //Hi there code watcher. Whatcha doin here? :3
       }) //Hi there code watcher. Whatcha doin here? :3
 } //Hi there code watcher. Whatcha doin here? :3
-function yt() {
-  setInterval(getdata, 3000);
-}
-function Twitter() {
-  setInterval(getdataTwitter, 3000);
-}
+function yt() { //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3 //Hi there code watcher. Whatcha doin here? :3
+  setInterval(getdata, 3000); //Hi there code watcher. Whatcha doin here? :3
+} //Hi there code watcher. Whatc //Hi there code watcher. Whatcha doin here? :3ha doin here? :3
+function Twitter() { //Hi there code watcher. Whatcha doin here? :3
+  setInterval(getdataTwitter, 3000); //Hi there code watcher. Whatcha doin here? :3
+} //Hi there code watcher. Whatcha doin here? :3
  //Hi there code watcher. Whatcha doin here? :3
  //Hi there code watcher. Whatcha doin here? :3
