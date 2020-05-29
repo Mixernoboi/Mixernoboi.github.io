@@ -73,6 +73,10 @@ a {
     background-color: #246;
     color: white;
     height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 4;
  }
  #left1 {
      left: 10px;
