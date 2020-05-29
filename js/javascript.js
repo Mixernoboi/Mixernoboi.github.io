@@ -45,8 +45,14 @@ function goyt() { //Hi there code watcher. Whatcha doin here? :3
 } //Hi there code watcher. Whatcha doin here? :3
 getdata() //Hi there code watcher. Whatcha doin here? :3
 function getdata() { //Hi there code watcher. Whatcha doin here? :3
+  chanelid = params[1]
+  if(chanelid == null || chanelid == "") {
+    chanelid = "UC-lHJZR3Gqxm24_Vd_AJ5Yw";
+  } else {
+    chanelid = params[1]
+  }
     $.ajax({ //Hi there code watcher. Whatcha doin here? :3
-        url: `${key}https://api.mixerno.space/youtube/channelUC/${params[1]}`, //Hi there code watcher. Whatcha doin here? :3
+        url: `${key}https://api.mixerno.space/youtube/channelUC/${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
         // Handle as Text //Hi there code watcher. Whatcha doin here? :3
         dataType: "text", //Hi there code watcher. Whatcha doin here? :3
         success: function (data) { //Hi there code watcher. Whatcha doin here? :3
