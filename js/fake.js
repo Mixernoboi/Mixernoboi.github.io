@@ -16,7 +16,7 @@ var sbrateMin;
 var sbrateSec;
 var base = 1;
 if(params.length == 9) {
-  name = params[2]
+  name = params[2].replace(/%20/g, " ")
   channelName.innerHTML = name;
   subscribercount = parseFloat(params[1])
   sbrate = params[3]
