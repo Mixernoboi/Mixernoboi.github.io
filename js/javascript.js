@@ -50,6 +50,30 @@ function searcherTwitch() { //Hi there code watcher. Whatcha doin here? :3
        //Hi there code watcher. Whatcha doin here? :3//Hi there code watcher. Whatcha doin here? :3
   } //Hi there code watcher. Whatcha doin here? :3
 } //Hi there code watcher. Whatcha doin here? :3
+function searcherTikTok() { //Hi there code watcher. Whatcha doin here? :3
+  var channelidorname = prompt("Enter User name (@ or found in the url)", params[1]); //Hi there code watcher. Whatcha doin here? :3
+  if (channelidorname == null || channelidorname == "") { //Hi there code watcher. Whatcha doin here? :3
+    id = "charlidamelio"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    id = channelidorname; //Hi there code watcher. Whatcha doin here? :3
+    location.href = params[0] +'?'+ id //Hi there code watcher. Whatcha doin here? :3
+//Hi there code watcher. Whatcha doin here? :3
+ //Hi there code watcher. Whatcha doin here? :3
+       //Hi there code watcher. Whatcha doin here? :3//Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
+} //Hi there code watcher. Whatcha doin here? :3
+function searcherMixer() { //Hi there code watcher. Whatcha doin here? :3
+  var channelidorname = prompt("Enter User name (found in the url)", params[1]); //Hi there code watcher. Whatcha doin here? :3
+  if (channelidorname == null || channelidorname == "") { //Hi there code watcher. Whatcha doin here? :3
+    id = "ninja"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    id = channelidorname; //Hi there code watcher. Whatcha doin here? :3
+    location.href = params[0] +'?'+ id //Hi there code watcher. Whatcha doin here? :3
+//Hi there code watcher. Whatcha doin here? :3
+ //Hi there code watcher. Whatcha doin here? :3
+       //Hi there code watcher. Whatcha doin here? :3//Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
+} //Hi there code watcher. Whatcha doin here? :3
 function goyt() { //Hi there code watcher. Whatcha doin here? :3
   chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
   if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
@@ -76,6 +100,24 @@ function goTwitch() { //Hi there code watcher. Whatcha doin here? :3
     chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
   } //Hi there code watcher. Whatcha doin here? :3
     location.href = "https://twitch.tv/" + chanelid //Hi there code watcher. Whatcha doin here? :3
+}//Hi there code watcher. Whatcha doin here? :3
+function goTikTok() { //Hi there code watcher. Whatcha doin here? :3
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = "charlidamelio"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
+    location.href = "https://www.tiktok.com/@" + chanelid //Hi there code watcher. Whatcha doin here? :3
+}//Hi there code watcher. Whatcha doin here? :3
+function goMixer() { //Hi there code watcher. Whatcha doin here? :3
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = "ninja"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
+    location.href = "https://mixer.com/" + chanelid //Hi there code watcher. Whatcha doin here? :3
 }//Hi there code watcher. Whatcha doin here? :3
 //Hi there code watcher. Whatcha doin here? :3
 function getdata() { //Hi there code watcher. Whatcha doin here? :3
@@ -133,6 +175,58 @@ function getdataTwitch() { //Hi there code watcher. Whatcha doin here? :3
   } //Hi there code watcher. Whatcha doin here? :3
     $.ajax({ //Hi there code watcher. Whatcha doin here? :3
         url: `${key}https://api.mixerno.space/twitch/user/${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
+        // Handle as Text //Hi there code watcher. Whatcha doin here? :3
+        dataType: "text", //Hi there code watcher. Whatcha doin here? :3
+        success: function (data) { //Hi there code watcher. Whatcha doin here? :3
+          var json = $.parseJSON(data); //Hi there code watcher. Whatcha doin here? :3
+          channelSubs.innerHTML = json.followers //Hi there code watcher. Whatcha doin here? :3
+          channelName.innerHTML = json.name //Hi there code watcher. Whatcha doin here? :3
+        } //Hi there code watcher. Whatcha doin here? :3
+      }) //Hi there code watcher. Whatcha doin here? :3
+}  //Hi there code watcher. Whatcha doin here? :3
+var tiktokbypass = [
+  'https://immense-castle-34936.herokuapp.com/@',
+  'https://backuptiktokapi.glitch.me/',
+  'https://backuptiktokapi.herokuapp.com/@',
+  'https://honorable-hazel-atmosphere.glitch.me/'
+]
+var randomtiktokbypass = Math.floor(Math.random()*tiktokbypass.length);
+var tiktokurl = tiktokbypass[randomtiktokbypass];
+function getdataTikTok() {
+  tiktokbypass = [
+    'https://immense-castle-34936.herokuapp.com/@',
+    'https://backuptiktokapi.glitch.me/',
+    'https://backuptiktokapi.herokuapp.com/@',
+    'https://honorable-hazel-atmosphere.glitch.me/'
+  ]
+  randomtiktokbypass = Math.floor(Math.random()*tiktokbypass.length);
+  tiktokurl = tiktokbypass[randomtiktokbypass]; //Hi there code watcher. Whatcha doin here? :3
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = "charlidamelio"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
+    $.ajax({ //Hi there code watcher. Whatcha doin here? :3
+        url: `${key}${tiktokurl}${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
+        // Handle as Text //Hi there code watcher. Whatcha doin here? :3
+        dataType: "text", //Hi there code watcher. Whatcha doin here? :3
+        success: function (data) { //Hi there code watcher. Whatcha doin here? :3
+          var json = $.parseJSON(data); //Hi there code watcher. Whatcha doin here? :3
+          channelSubs.innerHTML = json.followers //Hi there code watcher. Whatcha doin here? :3
+          channelName.innerHTML = json.name //Hi there code watcher. Whatcha doin here? :3
+        } //Hi there code watcher. Whatcha doin here? :3
+      }) //Hi there code watcher. Whatcha doin here? :3
+}  //Hi there code watcher. Whatcha doin here? :3
+function getdataMixer() { //Hi there code watcher. Whatcha doin here? :3
+  chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  if(chanelid == null || chanelid == "") { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = "Ninja"; //Hi there code watcher. Whatcha doin here? :3
+  } else { //Hi there code watcher. Whatcha doin here? :3
+    chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
+  } //Hi there code watcher. Whatcha doin here? :3
+    $.ajax({ //Hi there code watcher. Whatcha doin here? :3
+        url: `${key}https://api.mixerno.space/mixer/user/${chanelid}`, //Hi there code watcher. Whatcha doin here? :3
         // Handle as Text //Hi there code watcher. Whatcha doin here? :3
         dataType: "text", //Hi there code watcher. Whatcha doin here? :3
         success: function (data) { //Hi there code watcher. Whatcha doin here? :3
@@ -216,6 +310,12 @@ function Twitter() { //Hi there code watcher. Whatcha doin here? :3
 function Twitch() { //Hi there code watcher. Whatcha doin here? :3
   setInterval(getdataTwitch, 3000); //Hi there code watcher. Whatcha doin here? :3
 } 
+function TikTok() { //Hi there code watcher. Whatcha doin here? :3
+  setInterval(getdataTikTok, 3000); //Hi there code watcher. Whatcha doin here? :3
+} //Hi there code watcher. Whatcha doin here? :3
+function Mixer() { //Hi there code watcher. Whatcha doin here? :3
+  setInterval(getdataMixer, 3000); //Hi there code watcher. Whatcha doin here? :3
+}
 function DiffrenceTwit() { //Hi there code watcher. Whatcha doin here? :3
   setInterval(getdataDiffrenceTwit, 3000); //Hi there code watcher. Whatcha doin here? :3
 }//Hi there code watcher. Whatcha doin here? :3
