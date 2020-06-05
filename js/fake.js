@@ -125,7 +125,7 @@ credits: {
     name: 'Subs',
     showInLegend: true,
     marker: {
-      enabled: true
+      enabled: false
     },
 
   }]

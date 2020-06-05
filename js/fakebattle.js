@@ -139,7 +139,7 @@ credits: {
     name: 'Sub diffrence',
     showInLegend: true,
     marker: {
-      enabled: true
+      enabled: false
     },
 
   }]
