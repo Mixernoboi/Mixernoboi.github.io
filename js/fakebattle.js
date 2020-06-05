@@ -14,8 +14,15 @@ var sbrateDay;
 var sbrateHour;
 var sbrateMin;
 var sbrateSec;
+var name2;
+var subscribercount2;
+var sbrate2;
+var sbrateDay2;
+var sbrateHour2;
+var sbrateMin2;
+var sbrateSec2;
 var base = 1;
-if(params.length == 9) {
+if(params.length == 12) {
   name = params[2].replace(/%20/g, " ");
   channelName.innerHTML = name;
   subscribercount = parseFloat(params[1])
@@ -23,53 +30,60 @@ if(params.length == 9) {
   channelSubs.innerHTML = params[1]
   subscount.value = Math.floor(subscribercount)
   subsrate.value = sbrate
-  if(params[4] == "sec") {
+  name2 = params[5].replace(/%20/g, " ");
+  channelName2.innerHTML = name2;
+  subscribercount2 = parseFloat(params[4])
+  sbrate2 = params[6]
+  channelSubs2.innerHTML = params[4]
+  subscount2.value = Math.floor(subscribercount2)
+  subsrate2.value = sbrate2
+  if(params[7] == "sec") {
     var checkBox1 = document.getElementById("sec");
     checkBox1.checked = true
   }
-  if(params[4] == "min") {
+  if(params[7] == "min") {
     var checkBox1 = document.getElementById("min");
     checkBox1.checked = true
   }
-  if(params[4] == "hour") {
+  if(params[7] == "hour") {
     var checkBox1 = document.getElementById("hour");
     checkBox1.checked = true
   }
-  if(params[4] == "day") {
+  if(params[7] == "day") {
     var checkBox1 = document.getElementById("day");
     checkBox1.checked = true
   }
-  if(params[5] == "urlsaving") {
+  if(params[8] == "urlsaving") {
     var checkBox1 = document.getElementById("uri");
     checkBox1.checked = true
   }
-  if(params[6] == "autosetyes") {
+  if(params[9] == "autosetyes") {
     var checkBox1 = document.getElementById("setautom");
     checkBox1.checked = true
   }
-  if(params[6] == "autosetno") {
+  if(params[9] == "autosetno") {
     var checkBox1 = document.getElementById("setautom");
     checkBox1.checked = false
   }
-  if(params[7] == "autopauseyes") {
+  if(params[10] == "autopauseyes") {
     var checkBox1 = document.getElementById("pause");
     var checkBox2 = document.getElementById("uripause");
     checkBox1.checked = true
     checkBox2.checked = true
     base = 1;
   }
-  if(params[7] == "autopauseno") {
+  if(params[10] == "autopauseno") {
     var checkBox1 = document.getElementById("pause");
     var checkBox2 = document.getElementById("uripause");
     checkBox1.checked = false
     checkBox2.checked = false
     base = 0
   }
-  if(params[8] == "randomsubtakeyes") {
+  if(params[11] == "randomsubtakeyes") {
     var checkBox1 = document.getElementById("occsubs");
     checkBox1.checked = true
   }
-  if(params[8] == "randomsubtakeno") {
+  if(params[11] == "randomsubtakeno") {
     var checkBox1 = document.getElementById("occsubs");
     checkBox1.checked = false
   }
@@ -122,7 +136,7 @@ credits: {
 },
 
   series: [{
-    name: 'Subs',
+    name: 'Sub diffrence',
     showInLegend: true,
     marker: {
       enabled: true
@@ -141,6 +155,17 @@ function setName() {
             
          
     } 
+} 
+function setName2() { 
+  var channelidorname = prompt("Name", ""); 
+  if (channelidorname == null || channelidorname == "") { 
+    channelidorname = undefined;
+  } else {
+    name2 = channelidorname
+    channelName2.innerHTML = name2
+          
+       
+  } 
 } 
 function checkkerbox1() {
 
@@ -179,6 +204,8 @@ var notstarted = 1;
 function setvals() {
   subscribercount = parseFloat($('#subscount').val())
   sbrate = parseFloat($('#subsrate').val())
+  subscribercount2 = parseFloat($('#subscount2').val())
+  sbrate2 = parseFloat($('#subsrate2').val())
 }
 setInterval(function() {
   if(base === 1) {
@@ -197,10 +224,6 @@ function add() {
     var checkBox3 = document.getElementById("min");
     var checkBox2 = document.getElementById("hour");
     var checkBox1 = document.getElementById("day");
-    var checkBox44 = document.getElementById("sec2");
-    var checkBox33 = document.getElementById("min2");
-    var checkBox22 = document.getElementById("hour2");
-    var checkBox11 = document.getElementById("day2");
     var urlisaving = document.getElementById("uri");
     var occo = document.getElementById("occsubs");
   if (checkBox1.checked == true){
@@ -212,6 +235,12 @@ function add() {
         setTimeout(function() {
           subscribercount = subscribercount + sbrate / 24 / 60 / 60 * 4
         }, 1000);
+      } else {
+        subscribercount = subscribercount + sbrate / 24 / 60 / 60 * 2
+        channelSubs.innerHTML = Math.floor(subscribercount)
+        subscount.value = Math.floor(subscribercount)
+      }
+      if(Math.floor(Math.random() * 10) > 7.9) {
         subscribercount2 = subscribercount2 - sbrate2 / 24 / 60 / 60 * 2
         channelSubs2.innerHTML = Math.floor(subscribercount2)
         subscount2.value = Math.floor(subscribercount2)
@@ -219,10 +248,6 @@ function add() {
           subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 / 60 * 4
         }, 1000);
       } else {
-        subscribercount = subscribercount + sbrate / 24 / 60 / 60 * 2
-        channelSubs.innerHTML = Math.floor(subscribercount)
-        subscount.value = Math.floor(subscribercount)
-
         subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 / 60 * 2
         channelSubs2.innerHTML = Math.floor(subscribercount2)
         subscount2.value = Math.floor(subscribercount2)
@@ -245,16 +270,20 @@ function add() {
         subscount.value = Math.floor(subscribercount)
         setTimeout(function() {
           subscribercount = subscribercount + sbrate / 24 / 60 * 4
-          subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 * 4
         }, 1000);
-        subscribercount2 = subscribercount2 - sbrate2 / 24 / 60 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
       } else {
         subscribercount = subscribercount + sbrate / 24 / 60 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
-
+      }
+      if(Math.floor(Math.random() * 10) > 7.9) {
+        subscribercount2 = subscribercount2 - sbrate2 / 24 / 60 * 2
+        channelSubs2.innerHTML = Math.floor(subscribercount2)
+        subscount2.value = Math.floor(subscribercount2)
+        setTimeout(function() {
+          subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 * 4
+        }, 1000);
+      } else {
         subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 * 2
         channelSubs2.innerHTML = Math.floor(subscribercount2)
         subscount2.value = Math.floor(subscribercount2)
@@ -277,18 +306,20 @@ function add() {
         subscount.value = Math.floor(subscribercount)
         setTimeout(function() {
           subscribercount = subscribercount + sbrate / 24  * 4
-          subscribercount2 = subscribercount2 + sbrate2 / 24  * 4
         }, 1000);
-
-        subscribercount2 = subscribercount2 - sbrate2 / 24 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
-
       } else {
         subscribercount = subscribercount + sbrate / 24 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
-
+      }
+      if(Math.floor(Math.random() * 10) > 7.9) {
+        subscribercount2 = subscribercount2 - sbrate2 / 24 * 2
+        channelSubs2.innerHTML = Math.floor(subscribercount2)
+        subscount2.value = Math.floor(subscribercount2)
+        setTimeout(function() {
+          subscribercount2 = subscribercount2 + sbrate2 / 24 * 4
+        }, 1000);
+      } else {
         subscribercount2 = subscribercount2 + sbrate2 / 24 * 2
         channelSubs2.innerHTML = Math.floor(subscribercount2)
         subscount2.value = Math.floor(subscribercount2)
@@ -297,7 +328,7 @@ function add() {
       subscribercount = subscribercount + sbrate / 24 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
-
+                
         subscribercount2 = subscribercount2 + sbrate2 / 24 * 2
         channelSubs2.innerHTML = Math.floor(subscribercount2)
         subscount2.value = Math.floor(subscribercount2)
@@ -310,13 +341,8 @@ function add() {
         subscribercount = subscribercount - sbrate * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
-
-        subscribercount2 = subscribercount - sbrate * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount)
-        subscount.value = Math.floor(subscribercount)
         setTimeout(function() {
           subscribercount = subscribercount + sbrate * 4
-          subscribercount2 = subscribercount2 + sbrate2 * 4
         }, 1000);
       } else {
         subscribercount = subscribercount + sbrate * 2
@@ -324,10 +350,26 @@ function add() {
         subscount.value = Math.floor(subscribercount)
         
       }
+      if(Math.floor(Math.random() * 10) > 7.9) {
+        subscribercount2 = subscribercount2 - sbrate2 * 2
+        channelSubs2.innerHTML = Math.floor(subscribercount2)
+        subscount2.value = Math.floor(subscribercount2)
+        setTimeout(function() {
+          subscribercount2 = subscribercount2 + sbrate2 * 4
+        }, 1000);
+      } else {
+        subscribercount2 = subscribercount2 + sbrate2 * 2
+        channelSubs2.innerHTML = Math.floor(subscribercount2)
+        subscount2.value = Math.floor(subscribercount2)
+      }
     } else {
       subscribercount = subscribercount + sbrate * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
+                        
+        subscribercount2 = subscribercount2 + sbrate2 * 2
+        channelSubs2.innerHTML = Math.floor(subscribercount2)
+        subscount2.value = Math.floor(subscribercount2)
     }
   }
   if (urlisaving.checked == true){
@@ -338,15 +380,15 @@ function add() {
       if (autopause.checked == true){
         var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?day?urlsaving?autosetyes?autopauseyes?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?day?urlsaving?autosetyes?autopauseyes?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?day?urlsaving?autosetyes?autopauseyes?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?day?urlsaving?autosetyes?autopauseyes?randomsubtakeno`);
         }
         
       } else {
         var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?day?urlsaving?autosetyes?autopauseno?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?day?urlsaving?autosetyes?autopauseno?randomsubtakeyes`);
         } else {
           window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?day?urlsaving?autosetyes?autopauseno?randomsubtakeno`);
         }
@@ -357,16 +399,16 @@ function add() {
         if (autopause.checked == true){
           var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?day?urlsaving?autosetno?autopauseyes?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?day?urlsaving?autosetno?autopauseyes?randomsubtakeyes`);
         } else {
           window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?day?urlsaving?autosetno?autopauseyes?randomsubtakeno`);
         }
         } else {
           var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?day?urlsaving?autosetno?autopauseno?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?day?urlsaving?autosetno?autopauseno?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?day?urlsaving?autosetno?autopauseno?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?day?urlsaving?autosetno?autopauseno?randomsubtakeno`);
         }
         }
       }
@@ -379,17 +421,17 @@ function add() {
       if (autopause.checked == true){
         var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?hour?urlsaving?autosetyes?autopauseyes?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?hour?urlsaving?autosetyes?autopauseyes?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?hour?urlsaving?autosetyes?autopauseyes?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?hour?urlsaving?autosetyes?autopauseyes?randomsubtakeno`);
         }
         
       } else {
         var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?hour?urlsaving?autosetyes?autopauseno?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?hour?urlsaving?autosetyes?autopauseno?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?hour?urlsaving?autosetyes?autopauseno?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?hour?urlsaving?autosetyes?autopauseno?randomsubtakeno`);
         }
       }
         
@@ -398,16 +440,16 @@ function add() {
         if (autopause.checked == true){
           var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?hour?urlsaving?autosetno?autopauseyes?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?hour?urlsaving?autosetno?autopauseyes?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?hour?urlsaving?autosetno?autopauseyes?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?hour?urlsaving?autosetno?autopauseyes?randomsubtakeno`);
         }
         } else {
           var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?hour?urlsaving?autosetno?autopauseno?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?hour?urlsaving?autosetno?autopauseno?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?hour?urlsaving?autosetno?autopauseno?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?hour?urlsaving?autosetno?autopauseno?randomsubtakeno`);
         }
         }
       }
@@ -420,17 +462,17 @@ function add() {
       if (autopause.checked == true){
         var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?min?urlsaving?autosetyes?autopauseyes?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?min?urlsaving?autosetyes?autopauseyes?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?min?urlsaving?autosetyes?autopauseyes?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?min?urlsaving?autosetyes?autopauseyes?randomsubtakeno`);
         }
         
       } else {
         var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?min?urlsaving?autosetyes?autopauseno?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?min?urlsaving?autosetyes?autopauseno?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?min?urlsaving?autosetyes?autopauseno?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?min?urlsaving?autosetyes?autopauseno?randomsubtakeno`);
         }
       }
         
@@ -439,16 +481,16 @@ function add() {
         if (autopause.checked == true){
           var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?min?urlsaving?autosetno?autopauseyes?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?min?urlsaving?autosetno?autopauseyes?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?min?urlsaving?autosetno?autopauseyes?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?min?urlsaving?autosetno?autopauseyes?randomsubtakeno`);
         }
         } else {
           var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?min?urlsaving?autosetno?autopauseno?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?min?urlsaving?autosetno?autopauseno?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?min?urlsaving?autosetno?autopauseno?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?min?urlsaving?autosetno?autopauseno?randomsubtakeno`);
         }
         }
       }
@@ -462,17 +504,17 @@ function add() {
       if (autopause.checked == true){
         var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?sec?urlsaving?autosetyes?autopauseyes?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?sec?urlsaving?autosetyes?autopauseyes?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?sec?urlsaving?autosetyes?autopauseyes?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?sec?urlsaving?autosetyes?autopauseyes?randomsubtakeno`);
         }
         
       } else {
         var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?sec?urlsaving?autosetyes?autopauseno?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?sec?urlsaving?autosetyes?autopauseno?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?sec?urlsaving?autosetyes?autopauseno?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?sec?urlsaving?autosetyes?autopauseno?randomsubtakeno`);
         }
       }
         
@@ -481,16 +523,16 @@ function add() {
         if (autopause.checked == true){
           var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?sec?urlsaving?autosetno?autopauseyes?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?sec?urlsaving?autosetno?autopauseyes?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?sec?urlsaving?autosetno?autopauseyes?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?sec?urlsaving?autosetno?autopauseyes?randomsubtakeno`);
         }
         } else {
           var coc = document.getElementById("occsubs");
         if(coc.checked == true) {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?sec?urlsaving?autosetno?autopauseno?randomsubtakeyes`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?sec?urlsaving?autosetno?autopauseno?randomsubtakeyes`);
         } else {
-          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?sec?urlsaving?autosetno?autopauseno?randomsubtakeno`);
+          window.history.pushState("y", "g", `?${Math.floor(subscribercount)}?${name}?${sbrate}?${Math.floor(subscribercount2)}?${name2}?${sbrate2}?sec?urlsaving?autosetno?autopauseno?randomsubtakeno`);
         }
         }
       }
@@ -498,10 +540,10 @@ function add() {
     }
     
   }
-  
+  dif.innerHTML = Math.floor(subscribercount) - Math.floor(subscribercount2)
   chart.series[0].addPoint([
     (new Date()).getTime(),
-    Math.floor(subscribercount)
+    Math.floor(subscribercount) - Math.floor(subscribercount2)
   ]);
   if (chart.series[0].data.length >= 500) {
     chart.series[0].data[0].remove()
