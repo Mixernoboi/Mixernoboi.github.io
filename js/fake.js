@@ -212,29 +212,18 @@ function add() {
         setTimeout(function() {
           subscribercount = subscribercount + sbrate / 24 / 60 / 60 * 4
         }, 1000);
-        subscribercount2 = subscribercount2 - sbrate2 / 24 / 60 / 60 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
-        setTimeout(function() {
-          subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 / 60 * 4
-        }, 1000);
+
       } else {
         subscribercount = subscribercount + sbrate / 24 / 60 / 60 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
 
-        subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 / 60 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
       }
     } else {
       subscribercount = subscribercount + sbrate / 24 / 60 / 60 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
 
-        subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 / 60 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
     }
   }
   if (checkBox2.checked == true){
@@ -245,28 +234,19 @@ function add() {
         subscount.value = Math.floor(subscribercount)
         setTimeout(function() {
           subscribercount = subscribercount + sbrate / 24 / 60 * 4
-          subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 * 4
         }, 1000);
-        subscribercount2 = subscribercount2 - sbrate2 / 24 / 60 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
       } else {
         subscribercount = subscribercount + sbrate / 24 / 60 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
 
-        subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
       }
     } else {
       subscribercount = subscribercount + sbrate / 24 / 60 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
         
-        subscribercount2 = subscribercount2 + sbrate2 / 24 / 60 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
+
     }
   }
   if (checkBox3.checked == true){
@@ -277,30 +257,22 @@ function add() {
         subscount.value = Math.floor(subscribercount)
         setTimeout(function() {
           subscribercount = subscribercount + sbrate / 24  * 4
-          subscribercount2 = subscribercount2 + sbrate2 / 24  * 4
+
         }, 1000);
 
-        subscribercount2 = subscribercount2 - sbrate2 / 24 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
+
 
       } else {
         subscribercount = subscribercount + sbrate / 24 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
 
-        subscribercount2 = subscribercount2 + sbrate2 / 24 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
       }
     } else {
       subscribercount = subscribercount + sbrate / 24 * 2
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
 
-        subscribercount2 = subscribercount2 + sbrate2 / 24 * 2
-        channelSubs2.innerHTML = Math.floor(subscribercount2)
-        subscount2.value = Math.floor(subscribercount2)
     }
     
   }
@@ -311,12 +283,12 @@ function add() {
         channelSubs.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
 
-        subscribercount2 = subscribercount - sbrate * 2
+
         channelSubs2.innerHTML = Math.floor(subscribercount)
         subscount.value = Math.floor(subscribercount)
         setTimeout(function() {
           subscribercount = subscribercount + sbrate * 4
-          subscribercount2 = subscribercount2 + sbrate2 * 4
+
         }, 1000);
       } else {
         subscribercount = subscribercount + sbrate * 2
