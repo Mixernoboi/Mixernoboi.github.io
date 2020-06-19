@@ -140,7 +140,7 @@ function getdataTwitter() { //Hi there code watcher. Whatcha doin here? :3
   } else { //Hi there code watcher. Whatcha doin here? :3
     chanelid = params[1] //Hi there code watcher. Whatcha doin here? :3
   } //Hi there code watcher. Whatcha doin here? :3
-  fetch(`${corsapi}https://api.mixerno.space/twitter2/user/${chanelid}`)
+  fetch(`${corsapi}https://api.mixerno.space/twitter/user/${chanelid}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
