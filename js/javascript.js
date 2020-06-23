@@ -145,6 +145,11 @@ function getdataTwitter() { //Hi there code watcher. Whatcha doin here? :3
             .then(data => {
                 console.log(data)
                 channelName.innerHTML = data.name
+                if(data.name == undefined) {
+                  //pog
+              } else {
+                channelName.innerHTML = data.name
+              }
             })
             fetch(`https://bastet.socialblade.com/twitter/lookup?query=${chanelid}`)
             .then(response => response.json())
